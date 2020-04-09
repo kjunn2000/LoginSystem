@@ -4,13 +4,14 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const port = process.env.PORT || 3000;
+const config = require('./config/key');
 const dotenv = require('dotenv');
 dotenv.config();
 
 const {User} = require('./models/user');
 
 mongoose
-    .connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0-mk5r9.mongodb.net/test?retryWrites=true&w=majority`, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
+    .connect(config.mongoURI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
     .then(()=> console.log("MongoDB Connected."))
     .catch( err =>{
         console.log(err);
