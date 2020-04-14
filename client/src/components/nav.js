@@ -1,20 +1,18 @@
 import React from 'react';
-import {BrowserRouter as Link} from 'react-router-dom';
-import Navbar from 'react-bootstrap/Navbar';
+import {Navbar,Nav} from 'react-bootstrap';
 
 export default function navComponent(){
     return(
-        <Navbar> 
-            <nav id="nav">
-                    <ul class="nav-links">
-                        <li ><a class="nav-link" href="index.html">HOME</a></li>
-                        <li ><a class="nav-link" href="aboutus.html">ABOUT US</a></li>
-                        <li ><a class="nav-link" href="product.html">PRODUCT</a></li>
-                        <li ><a class="nav-link" href="brand.html">BRAND</a></li>
-                        <li ><a class="nav-link" href="contactus.html">CONTACT US</a></li>
-                    </ul>
-                </nav>
+        <Navbar expand="lg"> 
+            <Navbar.Brand className="font-weight-bold">Moody Jun</Navbar.Brand>
+            <Navbar.Toggle aria-controls="toggle-menu-bar"/>
+            <Navbar.Collapse id="toggle-menu-bar">
+                <Nav className="ml-auto">
+                    <Nav.Item><Nav.Link href="/">HOME</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="/about">ABOUT</Nav.Link></Nav.Item>
+                    <Nav.Item><Nav.Link href="login">LOGIN</Nav.Link></Nav.Item>
+                </Nav>
+            </Navbar.Collapse>
         </Navbar>
-    
     )
 }
